@@ -5,65 +5,98 @@
 const path = require('path')
 
 module.exports = {
-  dev: {
+    dev: {
+        // Paths
+        assetsSubDirectory: 'static',
+        assetsPublicPath: '/',
+        proxyTable: {
+            '/server': {
+                target: 'http://mng.sagacloud.cn',
+                // target: 'http://192.168.20.102:8082/',
+                changeOrigin: true,
+                pathRewrite: {
+                    // "^/apis": ""
+                }
+            },
+            '/duoduo-service': {
+                target: 'http://mng.sagacloud.cn',
+                // target: 'http://192.168.20.102:8082/',
+                changeOrigin: true,
+                pathRewrite: {
+                    // "^/apis": ""
+                }
+            },
+            '/image-service': {
+                target: 'http://api.sagacloud.cn/dp-auxiliary',
+                changeOrigin: true,
+                pathRewrite: {
+                    // "^/apis": ""
+                }
+            },
+            '/graphy-service': {
+                // target: 'http://192.168.20.225:8080/',
+                target: 'http://api.sagacloud.cn/',
+                pathRewrite: {
+                    '^/graphy-service': '/dp-auxiliary'
+                },
+                ws: true,
+                // 将主机标头的原点更改为目标URL
+                changeOrigin: false
+            }
+        },
+        // host: '172.16.0.241',
+        // Various Dev Server settings
+        // host: 'localhost', // can be overwritten by process.env.HOST
+        host: 'localhost',
+        port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+        autoOpenBrowser: false,
+        errorOverlay: true,
+        notifyOnErrors: true,
+        poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
-    // Paths
-    assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
-    proxyTable: {},
+        /**
+         * Source Maps
+         */
 
-    // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-    autoOpenBrowser: false,
-    errorOverlay: true,
-    notifyOnErrors: true,
-    poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
+        // https://webpack.js.org/configuration/devtool/#development
+        devtool: 'cheap-module-eval-source-map',
 
-    
-    /**
-     * Source Maps
-     */
+        // If you have problems debugging vue-files in devtools,
+        // set this to false - it *may* help
+        // https://vue-loader.vuejs.org/en/options.html#cachebusting
+        cacheBusting: true,
 
-    // https://webpack.js.org/configuration/devtool/#development
-    devtool: 'cheap-module-eval-source-map',
+        cssSourceMap: true
+    },
 
-    // If you have problems debugging vue-files in devtools,
-    // set this to false - it *may* help
-    // https://vue-loader.vuejs.org/en/options.html#cachebusting
-    cacheBusting: true,
+    build: {
+        // Template for index.html
+        index: path.resolve(__dirname, '../dist/index.html'),
 
-    cssSourceMap: true
-  },
+        // Paths
+        assetsRoot: path.resolve(__dirname, '../dist'),
+        assetsSubDirectory: 'static',
+        assetsPublicPath: '/',
 
-  build: {
-    // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
+        /**
+         * Source Maps
+         */
 
-    // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+        productionSourceMap: true,
+        // https://webpack.js.org/configuration/devtool/#production
+        devtool: '#source-map',
 
-    /**
-     * Source Maps
-     */
+        // Gzip off by default as many popular static hosts such as
+        // Surge or Netlify already gzip all static assets for you.
+        // Before setting to `true`, make sure to:
+        // npm install --save-dev compression-webpack-plugin
+        productionGzip: false,
+        productionGzipExtensions: ['js', 'css'],
 
-    productionSourceMap: true,
-    // https://webpack.js.org/configuration/devtool/#production
-    devtool: '#source-map',
-
-    // Gzip off by default as many popular static hosts such as
-    // Surge or Netlify already gzip all static assets for you.
-    // Before setting to `true`, make sure to:
-    // npm install --save-dev compression-webpack-plugin
-    productionGzip: false,
-    productionGzipExtensions: ['js', 'css'],
-
-    // Run the build command with an extra argument to
-    // View the bundle analyzer report after build finishes:
-    // `npm run build --report`
-    // Set to `true` or `false` to always turn it on or off
-    bundleAnalyzerReport: process.env.npm_config_report
-  }
+        // Run the build command with an extra argument to
+        // View the bundle analyzer report after build finishes:
+        // `npm run build --report`
+        // Set to `true` or `false` to always turn it on or off
+        bundleAnalyzerReport: process.env.npm_config_report
+    }
 }

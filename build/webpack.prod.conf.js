@@ -1,5 +1,6 @@
 'use strict'
 const path = require('path')
+const chalk = require('chalk')
 const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
@@ -11,8 +12,12 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
-const env = require('../config/prod.env')
+const env = process.env.envconfig === 'test' ? require('../config/test.env') : require('../config/prod.env')
 
+console.log(chalk.yellow('  环境变量:  ' + JSON.stringify(env) + '.\n'))
+for (let key in env) {
+    console.log(chalk.yellow('           ' + key + '  :  ' + env[key] + '.\n'))
+}
 const webpackConfig = merge(baseWebpackConfig, {
   module: {
     rules: utils.styleLoaders({

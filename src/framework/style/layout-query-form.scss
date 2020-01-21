@@ -1,0 +1,25 @@
+/**
+ * 查询表单的样式
+ */
+// #page-main #page-container #page-content-wrapper .page-content .query-form {
+.page-content .query-form {
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    .el-form {
+        &.el-form--inline {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .el-form-item {
+            margin: 3px 5px 3px 0;
+            .el-form-item__content {
+                margin-left: 0px;
+            }
+        }
+        .halving_line {
+            width: 100%;
+            border-top: 1px solid #dfe6ec;
+        }
+    }
+}

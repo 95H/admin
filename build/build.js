@@ -11,6 +11,7 @@ const webpack = require('webpack')
 const config = require('../config')
 const webpackConfig = require('./webpack.prod.conf')
 
+console.log(chalk.yellow('  开始打包:  ' + (process.env.envconfig === 'test' ? '测试环境' : '正式环境') + '.\n'))
 const spinner = ora('building for production...')
 spinner.start()
 

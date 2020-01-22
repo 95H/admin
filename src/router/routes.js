@@ -40,15 +40,17 @@ export default [{
     redirect: '/layout/layoutIndex',
     name: 'LayoutMain',
     component: LayoutMain,
-    children: [{
-            path: '/MonthReport/index',
-            component: MonthReport,
-            meta: {
-                breadcrumbs: [{
-                    label: '月报'
-                }]
-            }
-        }, {
+    children: [
+        // {
+        //     path: '/MonthReport/index',
+        //     component: MonthReport,
+        //     meta: {
+        //         breadcrumbs: [{
+        //             label: '月报'
+        //         }]
+        //     }
+        // }, 
+        {
             path: '/survey/index',
             component: Survey,
             meta: {

@@ -6,12 +6,12 @@
             <page-sidebar></page-sidebar>
 
             <div id='page-content-wrapper' class='page-content-wrapper'>
-                <div class='page-bar'>
+                <!-- <div class='page-bar'>
                     <el-breadcrumb separator='/'>
                         <el-breadcrumb-item :to='{ path: "/" }'>首页</el-breadcrumb-item>
                         <el-breadcrumb-item v-for='(b, index) in breadcrumb' :key='index' :to='{path:b.path}'>{{b.label}}</el-breadcrumb-item>
                     </el-breadcrumb>
-                </div>
+                </div> -->
 
                 <keep-alive>
                     <router-view v-if='$route.meta.keepAlive' class='page-content'></router-view>

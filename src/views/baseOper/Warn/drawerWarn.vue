@@ -301,7 +301,7 @@ export default {
 .warn-drawer {
   padding: 20px 10px;
   .p-style {
-    font-size: 18px;
+    // font-size: 18px;
     font-weight: bold;
     color: #cecece;
   }

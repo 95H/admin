@@ -435,7 +435,6 @@ export default {
                             margin-right: 8px;
                         }
                         span:last-child {
-                            font-family: MicrosoftYaHei;
                             color: rgba(31, 35, 41, 1);
                             height: 31px;
                             line-height: 31px;
@@ -485,7 +484,6 @@ export default {
                                 margin-right: 8px;
                             }
                             span:last-child {
-                                font-family: MicrosoftYaHei;
                                 color: rgba(31, 35, 41, 1);
                                 height: 31px;
                                 line-height: 31px;

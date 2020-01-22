@@ -7,9 +7,9 @@
                 @open='handleOpen'
                 @close='handleClose'
                 @select='menuSelect'
-                background-color='#364150'
-                text-color='#fff'
-                active-text-color='#ffd04b'
+                background-color='#00152A'
+                text-color='#FFFFFF'
+                active-text-color='#FFFFFF'
                 unique-opened
                 router
                 class='sidebar-menu'

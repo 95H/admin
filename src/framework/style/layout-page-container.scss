@@ -13,13 +13,15 @@
         }
         #page-content-wrapper {
             @include flex-container(column, nowrap, flex-start, stretch, stretch);
-            margin: 0px 10px 10px 10px;
+            background: #e4eafb;
+            // margin: 0px 10px 10px 10px;
+            padding: 24px;
             .page-bar {
                 @include flex-item(0, 0, 0, auto, auto);
                 height: 30px;
                 padding: 0 20px;
                 margin-bottom: 10px;
-                border-bottom: 1px solid #333;
+                // border-bottom: 1px solid #333;
                 .el-breadcrumb {
                     font-size: 14px;
                     line-height: 30px;

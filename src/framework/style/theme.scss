@@ -1,20 +1,26 @@
 $colorWhite: #fff;
 
-$pageHeaderBackground: #2b3643;
+$pageHeaderBackground: #00152A;
+$pageBackground: #ffffff;
 .body {
     color: #333;
 }
 #app #page-main {
     .page-header {
-        background: $pageHeaderBackground;
-
+        background: $pageBackground;
         .page-logo {
             .menu-toggler.sidebar-toggler {
                 color: $colorWhite;
             }
             .logo-text {
                 color: $colorWhite;
-                font-size: 20px;
+                display: inline-block;
+                height: 25px;
+                // font-size: 18px;
+                font-family
+                : PingFangSC-Medium, PingFang SC;
+                font-weight: 500;
+                color: rgba(255, 255, 255, 1);
             }
         }
 
@@ -28,7 +34,7 @@ $pageHeaderBackground: #2b3643;
         }
         .user-menu {
             .user-menu-dropdown {
-                color: $colorWhite;
+                color: #909BB0;
             }
         }
     }
@@ -38,14 +44,14 @@ $pageHeaderBackground: #2b3643;
 
         #page-sidebar-wrapper {
             color: azure;
-            background-color: #364150;
+            background-color:rgba(228,234,251,1);
             .sidebar-menu.el-menu {
-                background: #364150;
+                background: #00152A!important;
 
                 .sidebar-menu-submenu.el-submenu {
                     &.is-active {
                         .el-submenu__title {
-                            background: #36c6d3 !important;
+                            background: #0052FF !important;
                             color: $colorWhite !important;
                         }
                     }
@@ -60,7 +66,7 @@ $pageHeaderBackground: #2b3643;
                         background: #000;
                     }
                     &.is-active {
-                        background: #36c6d3 !important;
+                        background: #0052FF !important;
                         color: $colorWhite !important;
                     }
                 }
@@ -94,7 +100,7 @@ $pageHeaderBackground: #2b3643;
 .el-menu--vertical {
     .el-menu.el-menu--popup.el-menu--popup-right-start {
         .el-menu-item.sidebar-menu-item.is-active {
-            background: #36c6d3 !important;
+            background: #0052FF !important;
             color: $colorWhite !important;
         }
     }

@@ -598,7 +598,7 @@ export default {
             background: #fff;
             overflow-y: auto;
             .p-style {
-                font-size: 18px;
+                // font-size: 18px;
                 font-weight: bold;
                 color: #cecece;
             }

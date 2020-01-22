@@ -5,8 +5,15 @@ const PlanAdministrationAdmin = () => import('@/views/Plan/PlanAdministrationAdm
 const PlanMaster = () => import('@/views/Plan/PlanMaster')
 const PlanPresentation = () => import('@/views/Plan/PlanPresentation')
 const PlanPresentationInput = () => import('@/views/Plan/PlanPresentationInput')
-const User = () => import('@/views/User/index')
-const MonthReport = () => import("@/views/MonthReport/index.vue")
+
+
+
+
+
+
+
+
+// const MonthReport = () => import("@/views/MonthReport/index.vue")
 const Integral = () => import('@/views/Integral/index')
 const Personnel = () => import('@/views/Personnel/index')
 const Directive = () => import('@/views/Directive/index')
@@ -25,6 +32,9 @@ const NextSeconds = () => import('@/views/baseOper/Strate/nextSeconds')
 const EngDefect = () => import('@/views/EngDefect/index')
 const EngCreateMatter = () => import('@/views/EngDefect/engCreateAndEdit')
 
+const Survey = () => import('@/views/survey/index')
+const BookNumber = () => import('@/views/bookNumber/index')
+
 export default [{
     path: '*',
     redirect: '/layout/layoutIndex',
@@ -39,8 +49,8 @@ export default [{
                 }]
             }
         }, {
-            path: '/User/index',
-            component: User,
+            path: '/survey/index',
+            component: Survey,
             meta: {
                 keepAlive: true,
                 breadcrumbs: [{
@@ -48,6 +58,24 @@ export default [{
                 }]
             }
         },
+        {
+            path: '/bookNumber/index',
+            component: BookNumber,
+            meta: {
+                keepAlive: true,
+                breadcrumbs: [{
+                    // label: '项目通讯录'
+                }]
+            }
+        },
+
+
+
+
+
+
+
+
         {
             path: '/Directive/index',
             component: Directive,

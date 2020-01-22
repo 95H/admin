@@ -1,11 +1,11 @@
 <template>
   <div class="page-header">
-    <div id="page-header-logo" class="page-logo">
+    <div id="page-header-logo" class="page-logo" style="background:#00152A">
       <a href="index.html">
         <!-- <img src='@/assets/logo.png' alt='logo' class='logo-default'> -->
         <span class="logo-text">
           <!-- <b>{{systemName}}</b> -->
-          <b>协管平台</b>
+          海豚智合知识服务平台
         </span>
       </a>
       <div class="menu-toggler sidebar-toggler" @click.stop="toggleSidebar">
@@ -14,24 +14,26 @@
         </span>
       </div>
     </div>
-    <div id="page-header-data-menu" class="data-menu">
-      <el-select v-model="selectedProjectId" placeholder="请选择" @change="chanegeProject">
+    <!-- <div style="background:red;"> -->
+      <div id="page-header-data-menu" class="data-menu">
+        <!-- <el-select v-model="selectedProjectId" placeholder="请选择" @change="chanegeProject">
         <el-option v-for="item in projects" :key="item.id" :label="item.name" :value="item.id"></el-option>
-      </el-select>
+        </el-select>-->
+      </div>
+      <div id="page-header-user-menu" class="user-menu">
+        <el-dropdown trigger="hover" class="user-menu-dropdown" @command="userMenuCommand">
+          <span class="el-dropdown-link">
+            {{userInfo.username}}
+            <i class="el-icon-fa-user el-icon--right"></i>
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item icon="el-icon-plus" command="logout">退出</el-dropdown-item>
+            <!-- <el-dropdown-item icon='el-icon-circle-plus'>修改密码</el-dropdown-item> -->
+          </el-dropdown-menu>
+        </el-dropdown>
+      </div>
     </div>
-    <div id="page-header-user-menu" class="user-menu">
-      <el-dropdown trigger="hover" class="user-menu-dropdown" @command="userMenuCommand">
-        <span class="el-dropdown-link">
-          {{userInfo.username}}
-          <i class="el-icon-fa-user el-icon--right"></i>
-        </span>
-        <el-dropdown-menu slot="dropdown">
-          <el-dropdown-item icon="el-icon-plus" command="logout">退出</el-dropdown-item>
-          <!-- <el-dropdown-item icon='el-icon-circle-plus'>修改密码</el-dropdown-item> -->
-        </el-dropdown-menu>
-      </el-dropdown>
-    </div>
-  </div>
+  <!-- </div> -->
 </template>
 <script>
 import layout from "@/layout/layout";
@@ -82,8 +84,6 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-a {
-  margin-left: 50px !important;
-  text-decoration: none !important;
+.page-logo {
 }
 </style>

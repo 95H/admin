@@ -262,7 +262,6 @@ export default {
             }
             span:last-child {
                 font-size: 16px;
-                font-family: MicrosoftYaHei;
                 color: rgba(31, 35, 41, 1);
             }
         }
@@ -312,7 +311,6 @@ export default {
                     display: inline-block;
                     width: 80px;
                     text-align: center;
-                    font-family: MicrosoftYaHei;
                     color: rgba(100, 106, 115, 1);
                 }
             }

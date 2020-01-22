@@ -340,7 +340,7 @@ export default {
             border-right: 5px solid #000;
         }
         .box-center {
-            font-size: 18px;
+            // font-size: 18px;
             margin: 0 20px;
             display: flex;
             align-items: center;

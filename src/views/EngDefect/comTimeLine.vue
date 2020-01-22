@@ -171,7 +171,7 @@ export default {
         height: 100%;
         display: inline-block;
         i {
-            font-size: 18px;
+            // font-size: 18px;
         }
     }
 }

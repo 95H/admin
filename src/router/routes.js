@@ -1,39 +1,26 @@
 import LayoutMain from '@/layout/Main'
-const Plan = () => import('@/views/Plan')
-const PlanAdministration = () => import('@/views/Plan/PlanAdministration')
-const PlanAdministrationAdmin = () => import('@/views/Plan/PlanAdministrationAdmin')
-const PlanMaster = () => import('@/views/Plan/PlanMaster')
-const PlanPresentation = () => import('@/views/Plan/PlanPresentation')
-const PlanPresentationInput = () => import('@/views/Plan/PlanPresentationInput')
-
-
-
-
-
-
-
-
-// const MonthReport = () => import("@/views/MonthReport/index.vue")
-const Integral = () => import('@/views/Integral/index')
-const Personnel = () => import('@/views/Personnel/index')
-const Directive = () => import('@/views/Directive/index')
-const Position = () => import('@/views/Position/index')
-const Dimen = () => import('@/views/Dimen/index')
-const Patrol = () => import('@/views/Patrol/index')
-const ControlRisk = () => import('@/views/ControlRisk/index')
-const baseOper = () => import('@/views/baseOper/index')
-const Run = () => import('@/views/baseOper/Run/index')
-const Warn = () => import('@/views/baseOper/Warn/index')
-const RunDiag = () => import('@/views/baseOper/Warn/run')
-const Strate = () => import('@/views/baseOper/Strate/index')
-const ModifyStrate = () => import('@/views/baseOper/Strate/modifyStrate')
-const NextStrate = () => import('@/views/baseOper/Strate/nextStrate')
-const NextSeconds = () => import('@/views/baseOper/Strate/nextSeconds')
-const EngDefect = () => import('@/views/EngDefect/index')
-const EngCreateMatter = () => import('@/views/EngDefect/engCreateAndEdit')
-
 const Survey = () => import('@/views/survey/index')
 const BookNumber = () => import('@/views/bookNumber/index')
+const FinancialData = () => import('@/views/financialData/index')
+const Balance = () => import('@/views/financialData/balance/index')
+const Accepted = () => import('@/views/financialData/accepted')
+const Paid = () => import('@/views/financialData/paid')
+const CopeWith = () => import('@/views/financialData/copeWith')
+const Receivable = () => import('@/views/financialData/receivable')
+const Stock = () => import('@/views/stock/index')
+const Book = () => import('@/views/stock/book')
+const Raw = () => import('@/views/stock/raw')
+const SelectedTopic = () => import('@/views/selectedTopic')
+const CodeMaking = () => import('@/views/codeMaking')
+const ToReport = () => import('@/views/toReport/index')
+const RegularMeeting = () => import('@/views/regularMeeting')
+const Media = () => import('@/views/media')
+const Books = () => import('@/views/books')
+const FixedAssets = () => import('@/views/fixedAssets')
+const CheckWork = () => import('@/views/checkWork')
+const Structure = () => import('@/views/structure')
+const Issue = () => import('@/views/issue')
+
 
 export default [{
     path: '*',
@@ -41,22 +28,13 @@ export default [{
     name: 'LayoutMain',
     component: LayoutMain,
     children: [
-        // {
-        //     path: '/MonthReport/index',
-        //     component: MonthReport,
-        //     meta: {
-        //         breadcrumbs: [{
-        //             label: '月报'
-        //         }]
-        //     }
-        // }, 
         {
             path: '/survey/index',
             component: Survey,
             meta: {
                 keepAlive: true,
                 breadcrumbs: [{
-                    label: '项目通讯录'
+                    // label: '项目通讯录'
                 }]
             }
         },
@@ -70,276 +48,177 @@ export default [{
                 }]
             }
         },
-
-
-
-
-
-
-
-
         {
-            path: '/Directive/index',
-            component: Directive,
+            path: '/financialData',
+            component: FinancialData,
+            children: [
+                {
+                    path: '/financialData/balance',
+                    component: Balance,
+                    meta: {
+                        keepAlive: true,
+                    }
+                },
+                {
+                    path: '/financialData/accepted',
+                    component: Accepted,
+                    meta: {
+                        keepAlive: true,
+                    }
+                },
+                {
+                    path: '/financialData/paid',
+                    component: Paid,
+                    meta: {
+                        keepAlive: true,
+                    }
+                },
+                {
+                    path: '/financialData/receivable',
+                    component: Receivable,
+                    meta: {
+                        keepAlive: true,
+                    }
+                },
+                {
+                    path: '/financialData/copeWith',
+                    component: CopeWith,
+                    meta: {
+                        keepAlive: true,
+                    }
+                },
+
+            ]
+        },
+        {
+            path: '/issue/index',
+            component: Issue,
             meta: {
                 keepAlive: true,
                 breadcrumbs: [{
-                    label: '智能自控指令甄选'
+                    // label: '项目通讯录'
                 }]
             }
         },
         {
-            path: '/EngDefect/index',
-            component: EngDefect,
-            meta: {
-                breadcrumbs: [{
-                    label: '工程缺陷管理'
-                }]
-            }
-        },
-        {
-            path: '/EngDefect/engCreateAndEdit',
-            component: EngCreateMatter,
-            meta: {
-                // keepAlive: true,
-                breadcrumbs: [{
-                    label: '工程缺陷管理',
-                    path: '/EngDefect/index'
-                }, {
-                    label: '新建工程缺陷',
-                    path: '/EngDefect/engCreateAndEdit'
-                }]
-            }
-        },
-        // {
-        //     path: '/EngDefect/engEdit',
-        //     component: EngEditMatter,
-        //     meta: {
-        //         keepAlive: true,
-        //         breadcrumbs: [{
-        //             label: '工程缺陷管理',
-        //             path: '/EngDefect/index'
-        //         }, {
-        //             label: '编辑工程缺陷',
-        //             path: '/EngDefect/engEdit'
-        //         }]
-        //     }
-        // },
-        {
-            path: '/Plan',
-            component: Plan,
-            children: [{
-                    path: '/Plan/PlanAdministration',
-                    component: PlanAdministration,
+            path: '/stock/index',
+            component: Stock,
+            children: [
+                {
+                    path: '/stock/book',
+                    component: Book,
                     meta: {
-                        keepAlive: true,
                         breadcrumbs: [{
-                            label: '应急管理'
+                            // label: '策略管理',
+                            // path: "/Strate/index"
                         }, {
-                            label: '应急预案管理'
+                            // label: '策略配置'
                         }]
                     }
                 },
                 {
-                    path: '/Plan/PlanAdministrationAdmin',
-                    component: PlanAdministrationAdmin,
+                    path: '/stock/raw',
+                    component: Raw,
                     meta: {
-                        keepAlive: true,
                         breadcrumbs: [{
-                                label: '应急管理',
-                                path: '/Plan/PlanAdministration'
-                            },
-                            {
-                                label: '新增或修改预案'
-                            }
-                        ]
-                    }
-                },
-                {
-                    path: '/Plan/PlanMaster',
-                    component: PlanMaster,
-                    meta: {
-                        keepAlive: true,
-                        breadcrumbs: [{
-                            label: '应急管理'
+                            // label: '策略管理',
+                            // path: "/Strate/index"
                         }, {
-                            label: '应急事件报告'
+                            // label: '策略配置'
                         }]
-                    }
-                },
-                {
-                    path: '/Plan/PlanPresentation',
-                    component: PlanPresentation,
-                    meta: {
-                        keepAlive: true,
-                        breadcrumbs: [{
-                            label: '应急管理'
-                        }, {
-                            label: '应急预案掌握情况'
-                        }]
-                    }
-                },
-                {
-                    path: '/Plan/PlanPresentationInput',
-                    component: PlanPresentationInput,
-                    meta: {
-                        keepAlive: true,
-                        breadcrumbs: [{
-                                label: '应急预案',
-                                path: '/Plan/PlanPresentation'
-                            },
-                            {
-                                label: '录入考试成绩'
-                            }
-                        ]
                     }
                 }
             ]
         },
         {
-            path: '/Integral/index',
-            component: Integral,
+            path: '/selectedTopic/index',
+            component: SelectedTopic,
             meta: {
                 keepAlive: true,
                 breadcrumbs: [{
-                    label: '积分级别金币成就'
+                    // label: '项目通讯录'
                 }]
             }
         },
         {
-            path: '/Personnel/index',
-            component: Personnel,
+            path: '/codeMaking/index',
+            component: CodeMaking,
             meta: {
                 keepAlive: true,
                 breadcrumbs: [{
-                    label: '项目问题及建议'
+                    // label: '项目通讯录'
                 }]
             }
         },
         {
-            path: '/Position/index',
-            component: Position,
+            path: '/toReport/index',
+            component: ToReport,
             meta: {
                 keepAlive: true,
                 breadcrumbs: [{
-                    label: '设备及空间位置图'
+                    // label: '项目通讯录'
                 }]
             }
         },
         {
-            path: '/Dimen/index',
-            component: Dimen,
+            path: '/regularMeeting/index',
+            component: RegularMeeting,
             meta: {
                 keepAlive: true,
                 breadcrumbs: [{
-                    label: '维保质保期设定'
+                    // label: '项目通讯录'
                 }]
             }
         },
         {
-            path: '/Patrol/index',
-            component: Patrol,
+            path: '/media/index',
+            component: Media,
             meta: {
                 keepAlive: true,
                 breadcrumbs: [{
-                    label: '巡检有效期设定'
+                    // label: '项目通讯录'
                 }]
             }
         },
         {
-            path: '/ControlRisk/index',
-            component: ControlRisk,
+            path: '/books/index',
+            component: Books,
             meta: {
                 keepAlive: true,
                 breadcrumbs: [{
-                    label: '风控项阈值设置'
+                    // label: '项目通讯录'
                 }]
             }
         },
-        // 
         {
-            path: '/baseOper',
-            component: baseOper,
-            children: [{
-                path: '/baseOper/Run/index',
-                component: Run,
-                meta: {
-
-                    breadcrumbs: [{
-                        label: '无偏运行'
-                    }, {
-                        label: '运行总览'
-                    }]
-                }
-            }, {
-                path: '/baseOper/Warn/index',
-                component: Warn,
-                meta: {
-
-                    breadcrumbs: [{
-                        label: '无偏运行'
-                    }, {
-                        label: '偏差预警'
-                    }]
-                }
-            }, {
-                path: '/baseOper/Warn/runDiag',
-                component: RunDiag,
-                meta: {
-
-                    breadcrumbs: [{
-                        label: '无偏运行'
-                    }, {
-                        label: '运行诊断'
-                    }]
-                }
-            }, {
-                path: '/baseOper/Strate/index',
-                component: Strate,
-                meta: {
-                    breadcrumbs: [{
-                        label: '无偏运行'
-                    }, {
-                        label: '策略管理'
-                    }]
-                }
-            }, {
-                path: '/baseOper/Strate/modifyStrate',
-                component: ModifyStrate,
-                meta: {
-                    breadcrumbs: [{
-                            label: '策略管理',
-                            path: "/Strate/index"
-                        },
-                        {
-                            label: '修改策略'
-                        }
-                    ]
-                }
-            }, {
-                path: '/baseOper/Strate/nextStrate',
-                component: NextStrate,
-                meta: {
-                    breadcrumbs: [{
-                        label: '策略管理',
-                        path: "/Strate/index"
-                    }, {
-                        label: '策略配置'
-                    }]
-                }
-            }, {
-                path: '/baseOper/Strate/nextSeconds',
-                component: NextSeconds,
-                meta: {
-                    breadcrumbs: [{
-                        label: '策略管理',
-                        path: "/Strate/index"
-                    }, {
-                        label: '策略配置'
-                    }]
-                }
-            }]
+            path: '/fixedAssets/index',
+            component: FixedAssets,
+            meta: {
+                keepAlive: true,
+                breadcrumbs: [{
+                    // label: '项目通讯录'
+                }]
+            }
+        },
+        {
+            path: '/checkWork/index',
+            component: CheckWork,
+            meta: {
+                keepAlive: true,
+                breadcrumbs: [{
+                    // label: '项目通讯录'
+                }]
+            }
+        },
+        {
+            path: '/structure/index',
+            component: Structure,
+            meta: {
+                keepAlive: true,
+                breadcrumbs: [{
+                    // label: '项目通讯录'
+                }]
+            }
         }
-
     ]
 }]
